@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agência Criativa Web - Design Digital Moderno e Responsivo</title>
+    <link rel="stylesheet" href="styles.css"> 
+    
+</head>
+<body>
+    <!---------- Cabeçalho --------------->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <img src="img/unnamed.png" alt="Logotipo">
+            </div>
+            <!--Menu Hamburguer-->
+            <button class="menu-toggle" aria-label="Abrir Menu">&#9776;</button>
+
+            <nav class="nav-menu"> 
+                <ul class="nav-list">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#sobre-nos">Sobre Nós</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#depoimentos">Depoimentos</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!--------- Sessão principal-------------->
+    <main> 
+        <section id="home" class="hero-banner"> 
+            <div class="container">
+                <div class="hero-content">
+                    <h2>Crie seu Web Design com a gente!</h2>
+                    <p>Transformamos sua idéia em um layout funcional e responsivo</p>
+                    <a href="#contato" class="btn-primary">Fale Conosco</a>
+                </div>
+                <div class="hero-image">
+                    <img src="img/interface-de-design-web-exibida-na-tela-de-desktop-cercada-por-componentes-de-ui-flutuantes-como-botoes-i_176814-2584.avif">
+                </div>
+            </div>
+        </section>
+
+        <!---------------sessão sobre nós-------------->
+        <section id="sobre-nos" class="section-padding">
+            <div class="container">
+                <h2>Sobre Nós</h2>
+                <p>Na Agência Criativa Web, somos apaixonados por criar soluções digitais que não apenas pareçam boas, mas que também entreguem resultados. Combinamos criatividade, tecnologia e estratégia para construir marcas fortes e experiências de usuário inesquecíveis.</p>
+            </div>
+        </section>
+
+        <!--------------sessão serviços--------------->
+        <section id="servicos" class="section-padding">
+            <div class="container">
+                <h2>Nossos Serviços</h2>
+                <div class="servicos-grid">
+                    <div class="servico-item">
+                        <h3>Design Gráfico</h3>
+                        <p>Criação de identidade visual, logotipos, materiais de marketing digital e impresso.</p>
+                    </div>
+                    <div class="servico-item">
+                        <h3>Desenvolvimento Web</h3>
+                        <p>Sites institucionais, e-commerce, blogs e sistemas web personalizados, responsivos e otimizados.</p>
+                    </div>
+                    <div class="servico-item">
+                        <h3>Design UX/UI</h3>
+                        <p>Análise e otimização da experiência do usuário e interface, garantindo usabilidade e satisfação.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-----------------sessão de depoimentos------------------>
+        <section id="depoimentos" class="section-padding bg-light">
+            <div class="container">
+                <h2>O Que Nossos Clientes Dizem</h2>
+                <div class="depoimentos-flex">
+                    <div class="depoimento-card">
+                        <p>"A Agência Criativa Web superou minhas expectativas! Meu novo site é moderno, funcional e atraiu muitos novos clientes. Recomendo fortemente!"</p>
+                        <h4>- Ana Alice, CEO da Startup Inovação</h4>
+                    </div>
+                    <div class="depoimento-card">
+                        <p>"Profissionalismo e criatividade em cada detalhe. O trabalho de branding que fizeram para minha empresa foi fundamental para o nosso crescimento."</p>
+                        <h4>- Vitor Fonseca, Empreendedor Digital</h4>
+                    </div>
+                    <div class="depoimento-card">
+                        <p>"Do conceito à entrega, o time da Agência Criativa Web foi incrível. Meu e-commerce ficou perfeito e está vendendo muito!"</p>
+                        <h4>- Bruna Guimarães, Proprietária de E-commerce</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!----------sessão Entre em contato---------->
+        <section id="contato" class="section-padding">
+            <div class="container">
+                <h2>Entre em Contato</h2>
+                <div class="contato-grid">
+                    <div class="contato-info">
+                        <h3>Informações de Contato</h3>
+                        <p><strong>Endereço:</strong> Rua da Liberdade, 123 - Centro, Curitiba - PR</p>
+                        <p><strong>Telefone:</strong> (42) 9987-5678</p>
+                        <p><strong>E-mail:</strong> contato@agenciacriativaweb.com</p>
+                        <div class="social-links">
+                            <a href="#" aria-label="LinkedIn"><img src="https://img.icons8.com/ios-filled/24/000000/linkedin.png" alt="LinkedIn"></a>
+                            <a href="#" aria-label="Instagram"><img src="https://img.icons8.com/ios-filled/24/000000/instagram-new.png" alt="Instagram"></a>
+                            <a href="#" aria-label="Facebook"><img src="https://img.icons8.com/ios-filled/24/000000/facebook-new.png" alt="Facebook"></a>
+                        </div>
+                    </div>
+                    <div class="contato-form">
+                        <h3>Envie-nos uma Mensagem</h3>
+                        <form action="#" method="POST">
+                            <div class="form-group">
+                                <label for="nome">Nome:</label>
+                                <input type="text" id="nome" name="nome" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">E-mail:</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="mensagem">Mensagem:</label>
+                                <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn-primary">Enviar Mensagem</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!------Rodapé----->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Agência Criativa Web. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
