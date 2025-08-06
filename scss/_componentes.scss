@@ -1,0 +1,336 @@
+@use 'variaveis' as v;
+@use 'mixins' as m;
+
+// Botões
+.btn {
+  @include m.botao(v.$cor-botao, v.$text-dark);
+
+  &--primary {
+    background-color: v.$cor-botao;
+    color: v.$text-dark;
+  }
+}
+
+// Cabeçalho e Navegação
+.header {
+  background-color: v.$bg-dark;
+  color: v.$text-light;
+  padding: v.$spacing-md 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  &__logo-img {
+    width: 120px;
+  }
+
+  &__menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: v.$text-light;
+    font-size: 3rem;
+    cursor: pointer;
+    padding: v.$spacing-sm;
+  }
+
+  &__nav {
+    .nav__list {
+      list-style: none;
+      display: flex;
+      gap: 3rem;
+
+      .nav__link {
+        text-decoration: none;
+        font-weight: 600;
+        color: v.$text-light;
+        position: relative;
+        padding: v.$spacing-sm 0;
+        transition: color 0.3s ease;
+        font-size: 1.6rem;
+
+        &:after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          height: 2px;
+          width: 0;
+          background-color: v.$cor-botao;
+          transition: width 0.3s ease;
+        }
+
+        &:hover {
+          color: v.$cor-botao;
+          &:after {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  @include m.mobile {
+    &__container {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    &__logo {
+      width: 100%;
+      text-align: center;
+      margin-bottom: v.$spacing-md;
+    }
+    &__menu-toggle {
+      display: block;
+      align-self: flex-end;
+      position: absolute;
+      top: v.$spacing-md;
+      right: v.$spacing-md;
+    }
+    &__nav {
+      width: 100%;
+      position: relative;
+      .nav__list {
+        flex-direction: column;
+        display: none;
+        background-color: v.$bg-dark;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        padding: v.$spacing-md 0;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        z-index: 999;
+        &.active {
+          display: flex;
+        }
+      }
+    }
+  }
+}
+
+// Seção Hero
+.hero {
+  background-color: v.$cor-primaria;
+  color: v.$text-light;
+  padding: v.$spacing-xl 0;
+  text-align: center;
+  min-height: 80vh;
+  @include m.flex-center;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: v.$spacing-xl;
+  }
+
+  &__content {
+    &__title {
+      font-size: clamp(2.8rem, 5vw, 4.8rem);
+      color: v.$text-light;
+      margin-bottom: v.$spacing-md;
+      line-height: 1.2;
+    }
+    &__description {
+      font-size: clamp(1.6rem, 2vw, 2rem);
+      margin-bottom: v.$spacing-lg;
+    }
+  }
+
+  &__image {
+    &__img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  @include m.mobile {
+    &__container {
+      flex-direction: column;
+    }
+    &__content {
+      order: 2;
+    }
+    &__image {
+      order: 1;
+      margin-bottom: v.$spacing-lg;
+    }
+  }
+}
+
+// Seção Sobre Nós
+.about-us {
+  text-align: center;
+  &__description {
+    max-width: 800px;
+    margin: 0 auto v.$spacing-lg;
+    font-size: 1.8rem;
+  }
+}
+
+// Seção Serviços
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: v.$spacing-lg;
+  padding-top: v.$spacing-md;
+}
+
+.service-card {
+  background-color: #fff;
+  padding: v.$spacing-lg;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  &__title {
+    color: v.$cor-secundaria;
+    font-size: 2rem;
+    margin-bottom: v.$spacing-sm;
+  }
+
+  &__description {
+    font-size: 1.5rem;
+  }
+}
+
+// Seção Depoimentos
+.testimonials__grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: v.$spacing-lg;
+}
+
+.testimonial-card {
+  background-color: #fff;
+  padding: v.$spacing-lg;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  flex: 1 1 300px;
+  max-width: 350px;
+  text-align: center;
+
+  &__text {
+    font-style: italic;
+    margin-bottom: v.$spacing-md;
+    color: v.$text-dark;
+    font-size: 1.7rem;
+  }
+
+  &__author {
+    font-size: 1.6rem;
+    color: v.$cor-secundaria;
+    margin: 0;
+  }
+}
+
+// Seção Contato
+.contact {
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: v.$spacing-xl;
+    align-items: flex-start;
+  }
+
+  &__info {
+    background-color: v.$bg-light;
+    padding: v.$spacing-lg;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+
+    &__title {
+      color: v.$cor-secundaria;
+      margin-bottom: v.$spacing-md;
+    }
+    &__item {
+      margin-bottom: v.$spacing-sm;
+      font-size: 1.6rem;
+    }
+    &__social-links {
+      margin-top: v.$spacing-md;
+      display: flex;
+      gap: v.$spacing-md;
+    }
+  }
+
+  &__form {
+    &__title {
+      color: v.$cor-secundaria;
+    }
+
+    .form {
+      &__group {
+        margin-bottom: v.$spacing-md;
+      }
+      &__label {
+        display: block;
+        margin-bottom: v.$spacing-sm;
+        font-weight: 600;
+        color: v.$cor-secundaria;
+        font-size: 1.6rem;
+      }
+      &__input,
+      &__textarea {
+        width: 100%;
+        padding: v.$spacing-md;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-family: v.$font-body;
+        font-size: 1.6rem;
+        resize: vertical;
+
+        &:focus {
+          outline: none;
+          border-color: v.$cor-secundaria;
+          box-shadow: 0 0 0 calc(v.$spacing-md / 4) rgba(171, 71, 188, 0.2);
+        }
+      }
+    }
+  }
+
+  @include m.mobile {
+    &__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.social-link {
+  &__icon {
+    width: 2.8rem;
+    height: 2.8rem;
+    filter: invert(20%) sepia(80%) saturate(2000%) hue-rotate(250deg) brightness(80%) contrast(100%);
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-0.3rem);
+    }
+  }
+}
+
+// Rodapé
+.footer {
+  background-color: v.$bg-dark;
+  color: v.$text-light;
+  text-align: center;
+  padding: v.$spacing-md 0;
+  font-size: 1.4rem;
+}

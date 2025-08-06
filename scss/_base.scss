@@ -1,0 +1,45 @@
+@use 'variaveis' as v;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: v.$font-body;
+  font-size: 1.6rem;
+  line-height: 1.6;
+  color: v.$text-dark;
+  background-color: #fff;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: v.$font-heading;
+  margin-bottom: v.$spacing-lg;
+}
+
+h2 {
+  font-size: 3.2rem;
+  text-align: center;
+  margin-bottom: v.$spacing-xl;
+  color: v.$cor-secundaria;
+}
+
+h3 {
+  font-size: 2rem;
+  margin-bottom: v.$spacing-md;
+  color: v.$cor-secundaria;
+}
+
+p {
+  margin-bottom: v.$spacing-md;
+}

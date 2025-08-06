@@ -1,0 +1,36 @@
+@use 'variaveis' as v;
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin botao($bg-color, $text-color) {
+  display: inline-block;
+  padding: v.$spacing-md v.$spacing-lg;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-family: v.$font-heading; // Esta é a linha corrigida
+  font-size: 1.6rem;
+  cursor: pointer;
+  border: none;
+  background-color: $bg-color;
+  color: $text-color;
+
+  &:hover {
+    background-color: v.$cor-hover;
+    color: v.$text-light;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+}
+
+// Media Query para dispositivos móveis
+@mixin mobile {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
